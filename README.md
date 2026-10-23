@@ -71,3 +71,12 @@ The system dynamically assigns the first rotated side (`SIDE_A` or `SIDE_B`) as 
 │   ├── mkr1010_master/         # C++ Firmware for Arduino MKR 1010 (FSM, Sensors, LCD, I2C Master)
 │   └── pico_slave/             # C++ Firmware for Raspberry Pi Pico (Cellular Automata, 8x8 Matrix, I2C Slave)
 └── README.md
+
+---
+
+👨‍💻 Author
+Đặng Đức Nguyên Khoa (Will)
+
+Bachelor of Engineering in Robotics Engineering
+
+Metropolia University of Applied Sciences, Helsinki, Finland
