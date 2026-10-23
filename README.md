@@ -16,7 +16,7 @@ Instead of static animations, an 8x8 LED Matrix renders a virtual hourglass wher
 
 To ensure zero-latency sensor polling alongside high-frequency LED multiplexing, the system utilizes a **Master-Slave Dual-Microcontroller Architecture** communicating over **I2C**:
 
-![Hardware Architecture](docs/Mermaid-diagram-simple-version.drawio.png)
+![Hardware Architecture](docs/Mermaid-diagram-simple-version.png)
 
 * **Master Controller (`Arduino MKR WiFi 1010`):**
   * Manages the core finite state machine (FSM) and countdown timers.
@@ -34,7 +34,7 @@ To ensure zero-latency sensor polling alongside high-frequency LED multiplexing,
 
 The Arduino MKR 1010 controls the Raspberry Pi Pico's physics engine by transmitting single-byte hexadecimal commands over I2C:
 
-![I2C Protocol](docs/I2C-logic.drawio.png)
+![I2C Protocol](docs/I2C-logic.png)
 
 | Command Byte | Action / State Transition |
 | :--- | :--- |
@@ -53,13 +53,13 @@ The system dynamically assigns the first rotated side (`SIDE_A` or `SIDE_B`) as 
 * **Flip to Focus/Break Face:** Starts or switches the active timer immediately.
 * **Lay Flat (Horizontal):** Pauses the current countdown and triggers the sideways sand-settling physics.
 
-![Gravity Algorithm](docs/Gravity-Algorithm.drawio.png)
+![Gravity Algorithm](docs/Gravity-Algorithm.png)
 
 ### 2. Capacitive Touch Controls & Temp/Humidity Overlay
 * **Setup Phase:** Use Touch Buttons 1 & 3 to increase/decrease time (supports hold-to-repeat), Button 2 (Single Click) to switch between `HH:MM:SS` columns, and Button 2 (Double Click) to confirm.
 * **Environmental Overlay:** Holding Button 2 for `> 0.5s` during any active/paused countdown seamlessly switches the LCD to display real-time room Temperature (°C) and Humidity (%).
 
-![Button Logic](docs/LCD-Display-Button.drawio.png)
+![Button Logic](docs/LCD-Display-Button.png)
 
 ---
 
